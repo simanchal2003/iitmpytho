@@ -1,0 +1,17 @@
+# iitmpytho
+class Signal:
+    def __init__(self, T):
+        self.state = "red"
+        self.v = 0
+        self.T = T
+        
+    def sense(self, new_v):
+        self.v = new_v
+        
+    def update(self):
+        if self.state == "red":
+            if self.v >= self.T:
+                self.state = "green"
+        else:
+            if self.v <= self.T:
+                self.state = "red"
